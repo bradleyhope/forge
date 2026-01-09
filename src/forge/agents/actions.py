@@ -10,7 +10,7 @@ DEBUGGER = AgentDefinition(
 3. Implement a minimal, targeted fix
 4. Verify the fix doesn't break other code
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Edit", "Bash", "Grep"],
     capabilities=["bug_fixing", "debugging"],
 )
@@ -24,7 +24,7 @@ IMPROVER = AgentDefinition(
 3. Apply best practices
 4. Maintain backward compatibility
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Edit", "Bash"],
     capabilities=["refactoring", "optimization"],
 )
@@ -38,7 +38,7 @@ TESTER = AgentDefinition(
 3. Run existing tests
 4. Report test coverage
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Bash"],
     capabilities=["testing", "quality_assurance"],
 )
@@ -52,7 +52,7 @@ DOCUMENTER = AgentDefinition(
 3. Update README files
 4. Generate API documentation
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Edit"],
     capabilities=["documentation"],
 )
@@ -67,7 +67,7 @@ PROJECT_STEWARD = AgentDefinition(
 4. Clean up unused dependencies
 5. Update license year
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Edit", "Bash", "Glob"],
     capabilities=["project_maintenance"],
 )

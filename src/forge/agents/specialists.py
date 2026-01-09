@@ -10,7 +10,7 @@ BACKEND_ANALYZER = AgentDefinition(
 3. Security vulnerabilities
 4. Code quality and best practices
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Grep", "Glob", "Bash"],
     capabilities=["bug_detection", "performance_analysis", "code_review"],
 )
@@ -24,7 +24,7 @@ FRONTEND_ANALYZER = AgentDefinition(
 3. Performance (bundle size, rendering)
 4. Best practices (React, Vue, etc.)
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Grep", "Glob", "Bash"],
     capabilities=["ui_analysis", "accessibility", "performance"],
 )
@@ -39,7 +39,7 @@ SECURITY_ANALYZER = AgentDefinition(
 4. Secrets in code
 5. Dependency vulnerabilities
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Grep", "Glob", "Bash"],
     capabilities=["security_audit", "vulnerability_detection"],
 )
@@ -53,7 +53,7 @@ DATABASE_ARCHITECT = AgentDefinition(
 3. Indexing strategies
 4. Migration planning
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Bash"],
     capabilities=["schema_design", "query_optimization"],
 )
@@ -67,7 +67,7 @@ VECTOR_SEARCH_ARCHITECT = AgentDefinition(
 3. Hybrid search (dense + sparse)
 4. Vector database selection
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Bash"],
     capabilities=["embeddings", "semantic_search"],
 )
@@ -81,7 +81,7 @@ LANGCHAIN_ARCHITECT = AgentDefinition(
 3. Tool integration
 4. Memory strategies
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write", "Bash"],
     capabilities=["langchain", "agent_design"],
 )
@@ -95,7 +95,7 @@ PROMPT_ENGINEER = AgentDefinition(
 3. Output parsing
 4. Model-specific tuning
 {{ context | default('') }}""",
-    model="claude-sonnet-4",
+    model="claude-sonnet-4-20250514",
     tools=["Read", "Write"],
     capabilities=["prompt_design", "optimization"],
 )

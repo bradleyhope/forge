@@ -24,7 +24,7 @@ When analyzing a project:
 5. Suggest integration patterns with existing databases
 
 Provide concrete schema designs and query examples.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob", "Grep"],
     ),
     
@@ -50,7 +50,7 @@ When analyzing documents or codebases:
 6. Provide implementation code
 
 Always consider the downstream retrieval and generation quality.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob"],
     ),
     
@@ -76,7 +76,7 @@ When designing embedding solutions:
 6. Define evaluation benchmarks
 
 Provide concrete recommendations with implementation code.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "WebSearch"],
     ),
     
@@ -104,7 +104,7 @@ When designing RAG systems:
 7. Define evaluation metrics
 
 Provide complete pipeline designs with code.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob", "WebSearch"],
     ),
     
@@ -132,7 +132,7 @@ When designing agent systems:
 7. Implement guardrails and error handling
 
 Reference frameworks: Claude Agent SDK, LangGraph, CrewAI, AutoGen.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob", "WebSearch"],
     ),
     
@@ -160,7 +160,7 @@ When designing evaluation systems:
 7. Implement alerting for regressions
 
 Reference tools: promptfoo, Braintrust, LangSmith, custom solutions.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob"],
     ),
     
@@ -187,7 +187,7 @@ When analyzing infrastructure:
 6. Enhance monitoring and alerting
 
 Provide specific, actionable recommendations with code examples.""",
-        model="claude-sonnet-4",
+        model="claude-sonnet-4-20250514",
         tools=["Read", "Write", "Bash", "Glob", "Grep"],
     ),
 }

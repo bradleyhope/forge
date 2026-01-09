@@ -11,7 +11,7 @@ class AgentDefinition:
     name: str
     description: str
     prompt_template: str = ""
-    model: str = "claude-sonnet-4"
+    model: str = "claude-sonnet-4-20250514"
     tools: list[str] = field(default_factory=list)
     max_turns: int = 50
     capabilities: list[str] = field(default_factory=list)
