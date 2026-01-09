@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "forge"
+version = "0.2.0"
+description = "Multi-agent AI engineering platform built on Claude Agent SDK"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+    "claude-agent-sdk>=0.1.0",
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+    "chromadb>=0.5.0",
+    "jinja2>=3.1.0",
+    "gitpython>=3.1.0",
+    "pyyaml>=6.0",
+    "anyio>=4.0.0",
+]
+
+[project.scripts]
+forge = "forge.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/forge"]
