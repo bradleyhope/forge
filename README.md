@@ -6,7 +6,7 @@ Forge is a multi-agent system built on the Claude Agent SDK that provides autono
 
 ## Features
 
-- **19 Specialized Agents** for different tasks
+- **21 Specialized Agents** for different tasks
 - **Intelligent Routing** - automatically selects the best model for each task
 - **Memory System** - short-term and long-term memory for context
 - **Git Integration** - auto-branching and commits
@@ -60,6 +60,10 @@ forge run "Review and improve the API endpoints"
 - `tester` - Test creation
 - `documenter` - Documentation
 - `project_steward` - Project hygiene
+
+### Persona Testing
+- `persona_tester` - Generate diverse personas and test cases for stress-testing custom GPTs and AI systems
+- `research_extractor` - Extract user pain points and persona seeds from research sources
 
 ## Environment Variables
 

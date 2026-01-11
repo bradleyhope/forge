@@ -1,4 +1,4 @@
-# Forge v0.2.0 - Handoff Document
+# Forge v0.3.0 - Handoff Document
 
 ## Overview
 
@@ -9,7 +9,7 @@
 - **Real Claude Agent SDK Integration** - Uses the actual `claude-agent-sdk` package
 - **Custom Forge Tools** - 4 custom MCP tools for project analysis
 - **Cost Tracking** - Budget management with alerts
-- **19 Specialized Agents** - Full roster of specialists
+- **21 Specialized Agents** - Full roster of specialists including persona testing
 
 ## Quick Start
 
@@ -49,6 +49,7 @@ forge run "Review and improve the API"
 │   │   ├── specialists.py   # Specialist agents (7)
 │   │   ├── actions.py       # Action agents (5)
 │   │   ├── infrastructure.py # Infrastructure agents (7)
+│   │   ├── persona_tester.py # Persona testing agents (2)
 │   │   └── subagent.py      # Subagent orchestration
 │   ├── memory/
 │   │   ├── manager.py       # Memory management
@@ -69,7 +70,7 @@ forge run "Review and improve the API"
 └── HANDOFF.md               # This file
 ```
 
-## Agents (19 Total)
+## Agents (21 Total)
 
 ### Specialists (7)
 | Agent | Purpose |
@@ -101,6 +102,12 @@ forge run "Review and improve the API"
 | agent_architect | LLM agent design |
 | eval_architect | LLM evaluation |
 | infrastructure_analyzer | Cloud/DevOps |
+
+### Persona Testing (2)
+| Agent | Purpose |
+|-------|---------|
+| persona_tester | Generate personas and test cases for AI system stress testing |
+| research_extractor | Extract user pain points from research sources |
 
 ## Custom Forge Tools
 
