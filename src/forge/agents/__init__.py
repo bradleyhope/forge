@@ -1,6 +1,7 @@
 """Forge agents module."""
 from forge.agents.base import AgentDefinition, AgentResult, BaseAgent, Task
 from forge.agents.claude_agent import ClaudeAgent
+from forge.agents.direct_llm_agent import DirectLLMAgent, MultiLLMOrchestrator
 from forge.agents.specialists import SPECIALIST_AGENTS, get_specialist, list_specialists
 from forge.agents.actions import ACTION_AGENTS, get_action_agent, list_action_agents
 from forge.agents.infrastructure import INFRASTRUCTURE_AGENTS, get_infrastructure_agent, list_infrastructure_agents
@@ -30,6 +31,7 @@ def list_all_agents() -> list[str]:
 
 __all__ = [
     "AgentDefinition", "AgentResult", "BaseAgent", "Task", "ClaudeAgent",
+    "DirectLLMAgent", "MultiLLMOrchestrator",
     "SPECIALIST_AGENTS", "EXTENDED_SPECIALISTS", "ACTION_AGENTS", "INFRASTRUCTURE_AGENTS", 
     "META_AGENTS", "PERSONA_TESTING_AGENTS", "ALL_AGENTS",
     "API_ARCHITECT", "SOLUTION_ARCHITECT", "SolutionArchitect",

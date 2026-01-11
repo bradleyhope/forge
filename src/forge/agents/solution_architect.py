@@ -26,7 +26,10 @@ from typing import Any, Optional
 
 from forge.agents.base import AgentDefinition, AgentResult, Task
 from forge.agents.claude_agent import ClaudeAgent
-from forge.agents import ALL_AGENTS
+# Import ALL_AGENTS lazily to avoid circular import
+def _get_all_agents():
+    from forge.agents import ALL_AGENTS
+    return ALL_AGENTS
 from forge.config.settings import ForgeSettings
 from forge.schemas.workflow import (
     WorkflowDefinition,
@@ -181,12 +184,13 @@ class SolutionArchitect:
         
     def _get_agent(self, name: str) -> ClaudeAgent | None:
         """Get or create an agent by name."""
-        if name not in ALL_AGENTS:
+        all_agents = _get_all_agents()
+        if name not in all_agents:
             self.logger.warning(f"Agent not found: {name}")
             return None
         
         if name not in self._agents:
-            definition = ALL_AGENTS[name]
+            definition = all_agents[name]
             self._agents[name] = ClaudeAgent(
                 definition=definition,
                 settings=self.settings,
