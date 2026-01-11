@@ -4,8 +4,22 @@ from forge.agents.claude_agent import ClaudeAgent
 from forge.agents.specialists import SPECIALIST_AGENTS, get_specialist, list_specialists
 from forge.agents.actions import ACTION_AGENTS, get_action_agent, list_action_agents
 from forge.agents.infrastructure import INFRASTRUCTURE_AGENTS, get_infrastructure_agent, list_infrastructure_agents
+from forge.agents.api_architect import API_ARCHITECT
+from forge.agents.solution_architect import (
+    SOLUTION_ARCHITECT,
+    SolutionArchitect,
+    WORKFLOW_TEMPLATES,
+    get_workflow_template,
+    list_workflow_templates,
+)
 
-ALL_AGENTS = {**SPECIALIST_AGENTS, **ACTION_AGENTS, **INFRASTRUCTURE_AGENTS}
+# Add API Architect to specialists (it's a Tier 1 agent)
+EXTENDED_SPECIALISTS = {**SPECIALIST_AGENTS, "api_architect": API_ARCHITECT}
+
+# Meta-agents (orchestration layer)
+META_AGENTS = {"solution_architect": SOLUTION_ARCHITECT}
+
+ALL_AGENTS = {**EXTENDED_SPECIALISTS, **ACTION_AGENTS, **INFRASTRUCTURE_AGENTS, **META_AGENTS}
 
 def get_agent(name: str) -> AgentDefinition | None:
     return ALL_AGENTS.get(name)
@@ -15,7 +29,9 @@ def list_all_agents() -> list[str]:
 
 __all__ = [
     "AgentDefinition", "AgentResult", "BaseAgent", "Task", "ClaudeAgent",
-    "SPECIALIST_AGENTS", "ACTION_AGENTS", "INFRASTRUCTURE_AGENTS", "ALL_AGENTS",
+    "SPECIALIST_AGENTS", "EXTENDED_SPECIALISTS", "ACTION_AGENTS", "INFRASTRUCTURE_AGENTS", "META_AGENTS", "ALL_AGENTS",
+    "API_ARCHITECT", "SOLUTION_ARCHITECT", "SolutionArchitect",
+    "WORKFLOW_TEMPLATES", "get_workflow_template", "list_workflow_templates",
     "get_specialist", "list_specialists", "get_action_agent", "list_action_agents",
     "get_infrastructure_agent", "list_infrastructure_agents", "get_agent", "list_all_agents",
 ]
